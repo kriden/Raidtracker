@@ -1,0 +1,71 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="playerLevels col-md-6">
+				<h1 class="memberName {{member.class | lowercase}}"
+					style="background-image: url('http://eu.battle.net/static-render/eu/{{member.thumbnail}}');">
+						{{member.name}}<br/><span class="specs">{{member.spec}} | {{member.altSpec}}</span>
+				</h1>
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Equipped</div>
+					<div class="value">{{member.itemLevel}}</div>
+				</div>
+				</div>
+				
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Max</div>
+					<div class="value">{{member.altItemLevel}}</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row history">
+		<div class="history col-md-4">
+			<h1>Gear Progression</h1>
+			<div class="chart">
+				<canvas id="line" class="chart chart-line" data="data"
+				  labels="labels" legend="true" series="series"
+				  colours="colours"
+				  options="options"
+				  click="onClick">
+				</canvas> 
+			</div>
+			<div class="history timeline"  ng-repeat="datapoint in history | reverse">
+				<div ng-if="datapoint.itemsDiff.averageItemLevel > 0">
+					<h2><span class="itemlvl">Avg. Itemlevel: {{datapoint.averageItemLevel}} (+{{datapoint.averageItemLevelDelta}})</span>&nbsp;&nbsp;&nbsp;{{datapoint.formattedDate}}</h2>
+					
+					<div class="upgrade" ng-repeat="item in datapoint.itemsDiff">
+						<a href="#/player/{{member.name}}" rel="item={{item.id}}">
+							<div class="item" ng-class="getItemQuality(item)" ng-if="item.id > 0">
+								<img src="http://media.blizzard.com/wow/icons/36/{{item.icon}}.jpg" />{{item.name}} <span class="upgradeitemlevel">{{item.itemLevel}}</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="history-team col-md-2">
+			<canvas id="radar" class="chart chart-radar" data="radarData" labels="radarLabels" height="400" options="options"></canvas> 
+		
+			<h1>Guild {{member.class}}s</h1>
+			<div class="{{member.class | lowercase}} member" ng-repeat="member in guildMembers.members | orderBy:['-level','-itemLevel'] | filter:criteriaMatch(member)"
+				ng-click="detail(member)">
+				<div class="content">
+					<div class="name">
+						<div class="{{member.role}} role"></div>
+						<div class="{{member.altRole}} role"></div>
+						<a href="#/player/{{member.name}}">{{member.name}}</a> - {{member.level}}
+						<div class="spec">
+							<span class="{{member.role}}">{{member.spec}}</span>
+							|
+							<span class="{{member.altSpecRole}}">{{member.altSpec}}</span>
+						</div>
+					</div>	
+					<div class="itemlevel">{{member.itemLevel}}<br/><span class="alt-itemlevel">{{member.altItemLevel}}</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

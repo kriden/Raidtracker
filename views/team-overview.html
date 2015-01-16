@@ -1,0 +1,45 @@
+<div class="container-fluid">
+	<div class="row">
+		<div ng-repeat="team in teams | filter:teamId:strict" class="col-md-3 col-sm-6 col-xs-12" class="{{team.id}}">
+			<div class="teamLevels">
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Average</div>
+					<div class="value">{{team.averageItemLevel}}</div>
+				</div>
+				</div>
+				
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Highest</div>
+					<div class="value">{{team.highestItemLevel}}</div>
+				</div>
+				</div>
+				
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Lowest</div>
+					<div class="value">{{team.lowestItemLevel}}</div>
+				</div>
+				</div>
+			</div>
+			<h1><a href="#/team/{{team.id}}">{{team.name}}</a></h1>
+			<div class="{{member.class | lowercase}} member" ng-repeat="member in team.members | orderBy:['-level','-itemLevel'] | filter:armorType:strict | filter:armorToken:strict"
+				ng-click="detail(member)">
+				<div class="content">
+					<div class="name">
+						<div class="{{member.role}} role"></div>
+						<div class="{{member.altRole}} role"></div>
+						<a href="#/player/{{member.name}}">{{member.name}}</a> - {{member.level}}
+						<div class="spec">
+							<span class="{{member.role}}">{{member.spec}}</span>
+							|
+							<span class="{{member.altSpecRole}}">{{member.altSpec}}</span>
+						</div>
+					</div>	
+					<div class="itemlevel">{{member.itemLevel}}<br/><span class="alt-itemlevel">{{member.altItemLevel}}</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

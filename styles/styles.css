@@ -1,0 +1,262 @@
+* {
+	font-family: "Open Sans";
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+	background-color: #010000;
+}
+
+body:before {
+    background:url("http://i.imgur.com/KhO4E9r.png")repeat scroll 0 -75px transparent;
+    opacity: 0.2;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+}
+
+.topbar {
+	background-color: Black;
+	padding: 5px;
+	margin-bottom: 10px;
+	box-shadow: 0 0 5px 5px Silver;
+}
+
+.team {
+	width: 23%;
+	float: left;
+	padding: 5px;
+	border-left: 1px dotted #FFF; 
+}
+
+.team:last-child {
+	float: right;
+	border-left: 1px dotted #FFF; 
+}
+
+.name {
+	font-size: 18px;
+	float: left;
+}
+
+.team {
+	font-size: 11px;
+	float: left;
+}
+
+h1 {
+	padding-left: 5px;
+	font-weight: normal;
+	clear: both;
+	color: #b39265;
+	margin-bottom: 5px;
+	}
+
+h1 a, h1 a:active, h1 a:hover, h1 a:visited {
+	color: #b39265;
+	text-decoration: none;
+}
+
+.member {
+	margin: 5px;
+	background-color: white;
+	padding: 5px;
+	clear: both;
+	overflow: hidden;
+}
+
+.spec {
+	font-size: 8px;
+	text-transform: uppercase;
+	display: none;
+}
+
+.teamLevels {
+	text-align: center;
+}
+
+.teamItemlevel {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 15px;
+	display: table-cell;
+	color: White;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffb100;
+}
+
+div.role {
+	opacity: .4;
+	margin-top: 2px;
+	clear: left;
+	float: left;
+	width: 20px;
+	height: 15px;
+	background: url("http://cdn.fragmentedthought.com/sites/default/files/styles/large/public/Healer.png") no-repeat center center;
+	background-size: 30px 30px;
+
+    -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+     -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+     -webkit-filter: grayscale(100%);
+     filter: gray;
+     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+ 
+}
+
+div.role.Damage {
+	background-image: url("http://cdn.fragmentedthought.com/sites/default/files/styles/large/public/Damage.png");
+}
+
+div.role.Tank {
+	background-image: url("http://cdn.fragmentedthought.com/sites/default/files/styles/large/public/Tank.png");
+}
+
+.teamItemLevelWrapper {
+	float: left;
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+}
+
+.teamItemlevel .label {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.teamItemlevel .value {
+	font-size: 28px;
+	line-height: 18px;
+}
+
+.itemlevel {
+	color: Black;
+	font-weight: 48px;
+	float: right;
+}
+
+.content .itemlevel {
+	line-height: 14px;
+	text-align: right;
+}
+
+.content .alt-itemlevel {
+	font-size: 8px;
+	color: Silver	;
+}
+
+.content .name a {
+	margin-left: 5px;
+	line-height: 30px;
+	padding-top: 3px;
+}
+
+/** WoW Class colours */
+.death, .death a { color: #C41F3B; text-decoration: none;}
+.druid, .druid a { color: #FF7D0A; text-decoration: none;}
+.hunter, .hunter a { color: #ABD473; text-decoration: none;}
+.mage, .mage a { color: #69CCF0; text-decoration: none;}
+.monk, .monk a { color: #00FF96; text-decoration: none;}
+.paladin, .paladin a { color: #F58CBA; text-decoration: none;}
+.priest, .priest a { color: #666; text-decoration: none;}
+.rogue, .rogue a { color: #FFF569; text-decoration: none;}
+.shaman, .shaman a { color: #0070DE; text-decoration: none;}
+.warlock, .warlock a { color: #9482C9; text-decoration: none;}
+.warrior, .warrior a { color: #C79C6E; text-decoration: none;}
+
+.rogue.member a, .rogue {
+	color: #ffb100;
+}
+
+
+/** Detail */
+h1.memberName {
+    float:  left;
+    clear: none;
+    font-size: 64px;
+    padding-left: 105px;
+    background-repeat: no-repeat;
+    line-height: 36px;
+    padding-top: 4px;
+}
+
+h1.teamName {
+    float:  left;
+    clear: none;
+    font-size: 64px;
+}
+
+.playerLevels .teamItemLevelWrapper {
+    float: right;
+}
+
+.teamLevels .teamItemLevelWrapper {
+	float: right;
+}
+
+h2 {
+	background-color: #ffb100;
+	color: White;
+	padding: 10px;
+	font-size: 12px;
+}
+
+h2 .itemlvl {
+	font-size: 15px;
+	color: Black;
+	font-weight: bold;
+}
+
+.history .item {
+	border: 1px solid rgba(240,240,240,.6);
+	box-shadow: 0px 0px 1px black;
+	border-radius: 3px;
+	margin: 3px 0 3px 0;
+	padding: 5px;
+	background-color: rgba(0,0,0,.5);
+}
+
+.history .item img {
+	margin-right: 5px;
+}
+
+.history a {
+	text-decoration: none;
+}
+
+.upgradeitemlevel {
+	display: block;
+	float: right;
+	margin-top: 7px;
+	color: rgba(240,240,240,.5);
+	padding-right: 5px;
+}
+
+.row.history {
+	padding-left: 15px;
+}
+
+.memberName .specs {
+	font-size: 24px;
+}
+
+.history-team h1 {
+    margin-bottom: 20px;
+}
+
+chart-legend {
+    display: none;
+}
+
+
+.qual4 {
+	color: #8c02cd; 
+}

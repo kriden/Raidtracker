@@ -1,0 +1,121 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 teamStatLevels">
+			<div class="teamLevels">
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Average</div>
+					<div class="value">{{team.averageItemLevel}}</div>
+				</div>
+				</div>
+				
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Highest</div>
+					<div class="value">{{team.highestItemLevel}}</div>
+				</div>
+				</div>
+				
+				<div class="teamItemLevelWrapper">
+				<div class="teamItemlevel">
+					<div class="label">Lowest</div>
+					<div class="value">{{team.lowestItemLevel}}</div>
+				</div>
+				</div>
+			</div>
+			<h1 class="teamName">{{team.name}}</h1>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Average Item level</h2>
+			<canvas id="line" class="chart chart-line" data="ilvlData"
+				  labels="ilvlLabels" legend="true" series="ilvlSeries"
+				  colours="colours"
+				  options="options"
+				  click="onClick">
+				</canvas> 
+<!--
+			<div class="col-md-6">
+				<canvas id="line-{{team.id | lowercase}}" class="chart chart-doughnut" data="roleData"
+				  labels="roleLabels" 
+				  legend="false"
+				  colours="colours"
+				  options="roleOptions">
+			</canvas>
+			</div>
+			<div class="col-md-6">
+				<canvas id="pie-class-{{team.id | lowercase}}" class="chart chart-doughnut" 
+					data="classData"
+				  	labels="classLabels" 
+				  	colours="classColours"
+				  	options="roleOptions"
+				  	legend="false">
+				</canvas>
+			</div>
+		-->
+		</div>
+		<div class="col-md-3">
+
+			
+			<h2><span class="itemlvl">Tanks</span> (ilvl: {{tank.averageItemLevel}})</h2>
+			<div class="{{member.class | lowercase}} member" ng-repeat="member in tank.members | orderBy:['-class','-itemLevel']"
+				ng-click="detail(member)">
+				<div class="content">
+					<div class="name">
+						<div class="{{member.role}} role"></div>
+						<div class="{{member.altRole}} role"></div>
+						<a href="#/player/{{member.name}}">{{member.name}}</a> - {{member.level}}
+						<div class="spec">
+							<span class="{{member.role}}">{{member.spec}}</span>
+							|
+							<span class="{{member.altSpecRole}}">{{member.altSpec}}</span>
+						</div>
+					</div>	
+					<div class="itemlevel">{{member.itemLevel}}<br/><span class="alt-itemlevel">{{member.altItemLevel}}</span></div>
+				</div>
+			</div>
+
+			<h2><span class="itemlvl">Healers</span> (ilvl: {{healer.averageItemLevel}})</h2>
+			<div class="{{member.class | lowercase}} member" ng-repeat="member in healer.members | orderBy:['-class','-itemLevel']"
+				ng-click="detail(member)">
+				<div class="content">
+					<div class="name">
+						<div class="{{member.role}} role"></div>
+						<div class="{{member.altRole}} role"></div>
+						<a href="#/player/{{member.name}}">{{member.name}}</a> - {{member.level}}
+						<div class="spec">
+							<span class="{{member.role}}">{{member.spec}}</span>
+							|
+							<span class="{{member.altSpecRole}}">{{member.altSpec}}</span>
+						</div>
+					</div>	
+					<div class="itemlevel">{{member.itemLevel}}<br/><span class="alt-itemlevel">{{member.altItemLevel}}</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+
+
+			<h2><span class="itemlvl">DPS</span> (ilvl: {{damage.averageItemLevel}})</h2>
+			<div class="{{member.class | lowercase}} member" ng-repeat="member in damage.members | orderBy:['-class','-itemLevel']"
+				ng-click="detail(member)">
+				<div class="content">
+					<div class="name">
+						<div class="{{member.role}} role"></div>
+						<div class="{{member.altRole}} role"></div>
+						<a href="#/player/{{member.name}}">{{member.name}}</a> - {{member.level}}
+						<div class="spec">
+							<span class="{{member.role}}">{{member.spec}}</span>
+							|
+							<span class="{{member.altSpecRole}}">{{member.altSpec}}</span>
+						</div>
+					</div>	
+					<div class="itemlevel">{{member.itemLevel}}<br/><span class="alt-itemlevel">{{member.altItemLevel}}</span></div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+</div>

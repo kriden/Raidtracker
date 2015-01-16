@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="guildgearprogress">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dude Where's My Mount | Frostmane | Gear Progression</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="bower_components/nvd3/nv.d3.css"/>
+		<link href="styles/styles.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div ng-view ng-animate="'animate'"></div>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/Chart.js/Chart.min.js"></script>
+		<script src="bower_components/angular-chart.js/angular-chart.js"></script>
+		<script src="javascript/extend.js"></script>
+
+		<!-- APP Javascript files -->
+		<script src="javascript/app.js"></script>
+		<script src="javascript/controllers/teamoverview.js"></script>
+		<script src="javascript/controllers/team.js"></script>
+		<script src="javascript/resources/teamResource.js"></script>
+		<script src="javascript/controllers/player.js"></script>
+		<script src="javascript/resources/playerResource.js"></script>
+
+		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+		<script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": false, "renamelinks": false }</script>
+	</body>
+</html>
